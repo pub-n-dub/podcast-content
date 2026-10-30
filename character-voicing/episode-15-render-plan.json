@@ -3,12 +3,12 @@
   "scriptRevision": "recording-draft-1",
   "requiredVoices": ["Host", "Archivist", "Document Reader: Berkeley", "Document Reader: Koff", "Workshop Voice A", "Workshop Voice B"],
   "voices": {
-    "Host": { "registryId": "AV-HOST-INVESTIGATOR", "profile": "host-1.0", "engineVoice": "Leena" },
-    "Archivist": { "registryId": "AV-ARCHIVIST-EVIDENCE", "profile": "archivist-1.0", "engineVoice": "Daria" },
-    "Document Reader: Berkeley": { "registryId": "AV-DOC-BERKELEY", "profile": "document-reader-berkeley-1.0", "engineVoice": "Bdl" },
-    "Document Reader: Koff": { "registryId": "AV-DOC-KOFF", "profile": "document-reader-koff-1.0", "engineVoice": "Evgeniy-eng" },
-    "Workshop Voice A": { "registryId": "AV-WORKSHOP-FABRICATION", "profile": "workshop-a-1.0", "engineVoice": "Ksp" },
-    "Workshop Voice B": { "registryId": "AV-WORKSHOP-INTEGRATION", "profile": "workshop-b-1.0", "engineVoice": "Helen" }
+    "Host": { "registryId": "AV-HOST-INVESTIGATOR", "profile": "host-1.0", "engineVoice": "Leena", "nominalWpm": 145 },
+    "Archivist": { "registryId": "AV-ARCHIVIST-EVIDENCE", "profile": "archivist-1.0", "engineVoice": "Daria", "nominalWpm": 130 },
+    "Document Reader: Berkeley": { "registryId": "AV-DOC-BERKELEY", "profile": "document-reader-berkeley-1.0", "engineVoice": "Bdl", "nominalWpm": 120 },
+    "Document Reader: Koff": { "registryId": "AV-DOC-KOFF", "profile": "document-reader-koff-1.0", "engineVoice": "Evgeniy-eng", "nominalWpm": 135 },
+    "Workshop Voice A": { "registryId": "AV-WORKSHOP-FABRICATION", "profile": "workshop-a-1.0", "engineVoice": "Ksp", "nominalWpm": 125 },
+    "Workshop Voice B": { "registryId": "AV-WORKSHOP-INTEGRATION", "profile": "workshop-b-1.0", "engineVoice": "Helen", "nominalWpm": 140 }
   },
   "segments": [
     { "id": "E15-H01-01", "voice": "Host", "status": "NARRATION", "paceWpm": 145, "pauseAfterMs": 500, "text": "This is an investigation into an object whose maker is not presently known." },
