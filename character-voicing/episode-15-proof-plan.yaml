@@ -1,0 +1,201 @@
+# Performance plan for the source IDs in audioplay-script.md.
+# This file supplies render direction; it deliberately does not duplicate script text.
+schema_version: 1
+episode: 15
+package: proof-of-format
+script_revision: recording-draft-1
+render_manifest: episode-15-render-plan.json
+target_duration_seconds: 150
+estimated_duration_seconds: 168
+duration_status: >-
+  The current copy will likely exceed 2:30 once intentional pauses, the opening
+  Foley, the complete Tati motif, and the ten-second final hold are included.
+  Confirm against selected takes before cutting or retiming copy.
+voices:
+  Host:
+    registry_id: AV-HOST-INVESTIGATOR
+    profile: host-1.0
+    master_format: wav/mono/48000/24
+  Archivist:
+    registry_id: AV-ARCHIVIST-EVIDENCE
+    profile: archivist-1.0
+    master_format: wav/mono/48000/24
+  "Document Reader: Berkeley":
+    registry_id: AV-DOC-BERKELEY
+    profile: document-reader-berkeley-1.0
+    master_format: wav/mono/48000/24
+  "Document Reader: Koff":
+    registry_id: AV-DOC-KOFF
+    profile: document-reader-koff-1.0
+    master_format: wav/mono/48000/24
+  "Workshop Voice A":
+    registry_id: AV-WORKSHOP-FABRICATION
+    profile: workshop-a-1.0
+    master_format: wav/mono/48000/24
+  "Workshop Voice B":
+    registry_id: AV-WORKSHOP-INTEGRATION
+    profile: workshop-b-1.0
+    master_format: wav/mono/48000/24
+
+segments:
+  - id: E15-H01-01
+    cue: A02
+    voice: Host
+    status: NARRATION
+    pace_wpm: 145
+    direction: "Open close and factual; make 'not presently known' a boundary, not a tease."
+    pause_after_ms: 500
+    mix: foreground_dry
+
+  - id: E15-H01-02
+    cue: A02
+    voice: Host
+    status: NARRATION
+    pace_wpm: 145
+    direction: "Curiosity enters on the concrete visible details; keep the list observational."
+    pause_after_ms: 350
+    mix: foreground_dry
+
+  - id: E15-H01-03
+    cue: A02
+    voice: Host
+    status: NARRATION
+    pace_wpm: 138
+    direction: "Light stress on 'handle'; settle plainly on 'not an authorship claim'."
+    pause_between_sentences_ms: 250
+    pause_after_ms: 450
+    mix: foreground_dry
+
+  - id: E15-H01-04
+    cue: A02
+    voice: Host
+    status: NARRATION
+    pace_wpm: 136
+    direction: "Parallel promises, restrained; the second sentence lands with doubt, never menace."
+    pause_between_sentences_ms: 220
+    pause_after_ms: 700
+    assets_after: [ARC-02]
+    mix: foreground_dry
+
+  - id: E15-H02-01
+    cue: A03
+    voice: Host
+    status: NARRATION
+    pace_wpm: 140
+    direction: "A modest reset. 'Only' is a limit, not disappointment."
+    pause_after_ms: 300
+    mix: foreground_dry
+
+  - id: E15-H02-02
+    cue: A03
+    voice: Host
+    status: NARRATION
+    pace_wpm: 132
+    direction: "Give each visible feature its own short beat; shift from description to caution on 'observations'."
+    pause_between_sentences_ms: 160
+    pause_after_ms: 600
+    assets_after: [ARC-02]
+    mix: foreground_dry
+
+  - id: E15-H02-03
+    cue: A03
+    voice: Host
+    status: NARRATION
+    pace_wpm: 138
+    direction: "Precise and non-accusatory. Land separately on 'location', 'not a nationality', and 'not a maker’s signature'."
+    pause_between_sentences_ms: 220
+    pause_after_ms: 500
+    mix: foreground_dry
+
+  - id: E15-AR01-01
+    cue: A04
+    voice: Archivist
+    status: NARRATION
+    pace_wpm: 124
+    direction: "A usable correction, said with dry warmth; stress 'not', never 'authorship'."
+    pause_after_ms: 450
+    mix: foreground_slight_room
+
+  - id: E15-AR01-02
+    cue: A04
+    voice: Archivist
+    status: NARRATION
+    pace_wpm: 128
+    direction: "Keep the verbs collected, sold, moved, exhibited, remembered even; slow for the final evidentiary condition."
+    pause_between_sentences_ms: 300
+    pause_after_ms: 650
+    assets_after: [TATI-02, TATI-03, TATI-04, TATI-05, TATI-06]
+    mix: foreground_slight_room
+
+  - id: E15-H03-01
+    cue: A05
+    voice: Host
+    status: NARRATION
+    pace_wpm: 138
+    direction: "Receive the empty field without consolation; turn 'condition of the story' into a working premise."
+    pause_between_sentences_ms: 260
+    pause_after_ms: 350
+    mix: foreground_dry
+
+  - id: E15-H03-02
+    cue: A05
+    voice: Host
+    status: NARRATION
+    pace_wpm: 142
+    direction: "Forward-moving list. Slow only at 'inference rather than a fact' and 'transparent reconstructions'."
+    pause_between_sentences_ms: 170
+    pause_after_ms: 350
+    mix: foreground_dry
+
+  - id: E15-AR02-01
+    cue: A05
+    voice: Archivist
+    status: NARRATION
+    pace_wpm: 120
+    direction: "Brief, level correction; no dramatic weight beyond the sentence’s factual limit."
+    pause_after_ms: 300
+    mix: foreground_slight_room
+
+  - id: E15-H03-03
+    cue: A05
+    voice: Host
+    status: NARRATION
+    pace_wpm: 132
+    direction: "Accept and extend the correction. Keep 'plausible' and 'proven' cleanly distinct."
+    pause_after_ms: 300
+    mix: foreground_dry
+
+  - id: E15-AR02-02
+    cue: A05
+    voice: Archivist
+    status: NARRATION
+    pace_wpm: 126
+    direction: "Read the categories as labels, not a slogan; give each a small separation."
+    pause_after_ms: 350
+    mix: foreground_slight_room
+
+  - id: E15-H03-04
+    cue: A05
+    voice: Host
+    status: NARRATION
+    pace_wpm: 136
+    direction: "Curious rather than triumphant. Let the question open outward; no answer implied."
+    pause_after_ms: 10000
+    assets_after: [ARC-07]
+    mix: foreground_dry_to_silence
+
+sound_cues:
+  - id: E15-A01
+    cue: A01
+    assets: [TATI-01, ARC-01, ARC-07]
+    duration_seconds: 12
+    direction: "One dry click, two beats of room, photograph placement; no music."
+  - id: E15-T01
+    cue: A04
+    assets: [TATI-02, TATI-03, TATI-04, TATI-05, TATI-06]
+    direction: "Click to strain to movement to stall to silence, in that order. Do not cover the motif with dialogue."
+  - id: E15-A06
+    cue: A06
+    assets: [ARC-07]
+    duration_seconds: 10
+    direction: "Full silence through second eight; introduce only a quiet room-tone tail, then cut after it lands."

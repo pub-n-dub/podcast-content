@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "scriptRevision": "recording-draft-1",
+  "requiredVoices": ["Host", "Archivist", "Document Reader: Berkeley", "Document Reader: Koff", "Workshop Voice A", "Workshop Voice B"],
+  "voices": {
+    "Host": { "registryId": "AV-HOST-INVESTIGATOR", "profile": "host-1.0", "engineVoice": "Leena" },
+    "Archivist": { "registryId": "AV-ARCHIVIST-EVIDENCE", "profile": "archivist-1.0", "engineVoice": "Daria" },
+    "Document Reader: Berkeley": { "registryId": "AV-DOC-BERKELEY", "profile": "document-reader-berkeley-1.0", "engineVoice": "Bdl" },
+    "Document Reader: Koff": { "registryId": "AV-DOC-KOFF", "profile": "document-reader-koff-1.0", "engineVoice": "Evgeniy-eng" },
+    "Workshop Voice A": { "registryId": "AV-WORKSHOP-FABRICATION", "profile": "workshop-a-1.0", "engineVoice": "Ksp" },
+    "Workshop Voice B": { "registryId": "AV-WORKSHOP-INTEGRATION", "profile": "workshop-b-1.0", "engineVoice": "Helen" }
+  },
+  "segments": [
+    { "id": "E15-H01-01", "voice": "Host", "status": "NARRATION", "paceWpm": 145, "pauseAfterMs": 500, "text": "This is an investigation into an object whose maker is not presently known." },
+    { "id": "E15-H01-02", "voice": "Host", "status": "NARRATION", "paceWpm": 145, "pauseAfterMs": 350, "text": "The photograph before us shows a small robot: a face, a chassis, mechanisms arranged to be seen as well as to do work." },
+    { "id": "E15-H01-03", "voice": "Host", "status": "NARRATION", "paceWpm": 138, "pauseAfterMs": 450, "text": "It has come to be called the Tati robot. That name is a handle for this inquiry. It is not an authorship claim." },
+    { "id": "E15-H01-04", "voice": "Host", "status": "NARRATION", "paceWpm": 136, "pauseAfterMs": 700, "text": "We will not turn resemblance into proof. We will not let a good story fill a gap in the record." },
+    { "id": "E15-H02-01", "voice": "Host", "status": "NARRATION", "paceWpm": 140, "pauseAfterMs": 300, "text": "For now, the photograph gives us only what a photograph can give." },
+    { "id": "E15-H02-02", "voice": "Host", "status": "NARRATION", "paceWpm": 132, "pauseAfterMs": 600, "text": "There is a head. There are eyes. A jaw-like mechanism. A body with visible structure. Those are observations, not a diagnosis of how the machine worked, when it was made, or who made it." },
+    { "id": "E15-H02-03", "voice": "Host", "status": "NARRATION", "paceWpm": 138, "pauseAfterMs": 500, "text": "The available provenance places the object in Paris. It does not, by itself, tell us the route by which it arrived there. Paris is a location in the file, not a nationality or a maker's signature." },
+    { "id": "E15-AR01-01", "voice": "Archivist", "status": "NARRATION", "paceWpm": 124, "pauseAfterMs": 450, "text": "Provenance is not authorship." },
+    { "id": "E15-AR01-02", "voice": "Archivist", "status": "NARRATION", "paceWpm": 128, "pauseAfterMs": 650, "text": "An object can be collected, sold, moved, exhibited, or remembered far from the place where it was built. Until a source connects a person to this object, the maker field remains empty." },
+    { "id": "E15-H03-01", "voice": "Host", "status": "NARRATION", "paceWpm": 138, "pauseAfterMs": 350, "text": "That emptiness is not a failure of the story. It is the condition of the story." },
+    { "id": "E15-H03-02", "voice": "Host", "status": "NARRATION", "paceWpm": 142, "pauseAfterMs": 350, "text": "We can gather documents. We can compare documented machine cultures. We can say when a connection is an inference rather than a fact. And we can build transparent reconstructions to test a mechanical idea." },
+    { "id": "E15-AR02-01", "voice": "Archivist", "status": "NARRATION", "paceWpm": 120, "pauseAfterMs": 300, "text": "But a reconstruction is not testimony." },
+    { "id": "E15-H03-03", "voice": "Host", "status": "NARRATION", "paceWpm": 132, "pauseAfterMs": 300, "text": "Nor is a plausible builder a proven builder." },
+    { "id": "E15-AR02-02", "voice": "Archivist", "status": "NARRATION", "paceWpm": 126, "pauseAfterMs": 350, "text": "The labels will stay on screen: documented, inference, reconstruction, unknown." },
+    { "id": "E15-H03-04", "voice": "Host", "status": "NARRATION", "paceWpm": 136, "pauseAfterMs": 10000, "text": "Our question is simple: what kind of world might have made this machine possible?" }
+  ]
+}
