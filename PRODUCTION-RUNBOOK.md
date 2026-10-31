@@ -49,6 +49,23 @@ The AeonVoice .NET binding now exposes this through `SynthesisOptions` and the
 three-argument `SynthesizeToPcm16` overload. The two-argument overload remains
 at a relative rate of `1.0` for compatibility.
 
+## 3a. Controlled naturalness
+
+Use small authored pitch and volume offsets at voice level, with a line override
+only when its meaning demands it. Cadencer applies `relativePitch` and
+`relativeVolume` alongside rate; all three are recorded per segment in the
+release manifest. Keep normal delivery within approximately five percent of its
+profile default. Use `pronunciations` for approved spoken forms; Cadencer
+replaces whole words only and records hashes for authored and spoken text.
+Phrase pauses remain explicit timing cues—never random jitter or a pause at
+every comma.
+
+For an audition, do not set every `paceWpm` equal to its role's `nominalWpm`:
+that resolves every relative rate to `1.0` and conceals a key distinction.
+Audition settings may be more contrastive than approved production settings;
+once roles are recognisable, reduce offsets to the smallest values that retain
+separation in a complete scene.
+
 ## 4. Render dialogue masters
 
 ```bash

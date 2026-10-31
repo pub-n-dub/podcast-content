@@ -1,21 +1,22 @@
 {
   "schemaVersion": 1,
   "scriptRevision": "voice-audition-1",
+  "pronunciations": { "Tati": "Tah-tee", "Berkeley": "Berk-lee", "Koff": "Koff" },
   "requiredVoices": ["Host", "Archivist", "Document Reader: Berkeley", "Document Reader: Koff", "Workshop Voice A", "Workshop Voice B"],
   "voices": {
-    "Host": { "registryId": "AV-HOST-INVESTIGATOR", "profile": "host-1.0", "engineVoice": "Leena", "nominalWpm": 145 },
-    "Archivist": { "registryId": "AV-ARCHIVIST-EVIDENCE", "profile": "archivist-1.0", "engineVoice": "Daria", "nominalWpm": 130 },
-    "Document Reader: Berkeley": { "registryId": "AV-DOC-BERKELEY", "profile": "document-reader-berkeley-1.0", "engineVoice": "Bdl", "nominalWpm": 120 },
-    "Document Reader: Koff": { "registryId": "AV-DOC-KOFF", "profile": "document-reader-koff-1.0", "engineVoice": "Evgeniy-eng", "nominalWpm": 135 },
-    "Workshop Voice A": { "registryId": "AV-WORKSHOP-FABRICATION", "profile": "workshop-a-1.0", "engineVoice": "Ksp", "nominalWpm": 125 },
-    "Workshop Voice B": { "registryId": "AV-WORKSHOP-INTEGRATION", "profile": "workshop-b-1.0", "engineVoice": "Helen", "nominalWpm": 140 }
+    "Host": { "registryId": "AV-HOST-INVESTIGATOR", "profile": "host-1.1", "engineVoice": "Leena", "nominalWpm": 145, "relativePitch": 0.98, "relativeVolume": 0.98 },
+    "Archivist": { "registryId": "AV-ARCHIVIST-EVIDENCE", "profile": "archivist-1.1", "engineVoice": "Daria", "nominalWpm": 130, "relativePitch": 0.91, "relativeVolume": 0.94 },
+    "Document Reader: Berkeley": { "registryId": "AV-DOC-BERKELEY", "profile": "document-reader-berkeley-1.1", "engineVoice": "Bdl", "nominalWpm": 120, "relativePitch": 0.94, "relativeVolume": 0.96 },
+    "Document Reader: Koff": { "registryId": "AV-DOC-KOFF", "profile": "document-reader-koff-1.1", "engineVoice": "Evgeniy-eng", "nominalWpm": 135, "relativePitch": 1.01, "relativeVolume": 1.00 },
+    "Workshop Voice A": { "registryId": "AV-WORKSHOP-FABRICATION", "profile": "workshop-a-1.1", "engineVoice": "Ksp", "nominalWpm": 125, "relativePitch": 0.89, "relativeVolume": 0.93 },
+    "Workshop Voice B": { "registryId": "AV-WORKSHOP-INTEGRATION", "profile": "workshop-b-1.1", "engineVoice": "Helen", "nominalWpm": 140, "relativePitch": 1.06, "relativeVolume": 1.01 }
   },
   "segments": [
-    { "id": "AUD-HOST", "voice": "Host", "status": "AUDITION", "paceWpm": 145, "pauseAfterMs": 0, "text": "The record gives us a place to begin, not a reason to stop asking." },
-    { "id": "AUD-ARCHIVIST", "voice": "Archivist", "status": "AUDITION", "paceWpm": 130, "pauseAfterMs": 0, "text": "The record gives us a place to begin, not a reason to stop asking." },
-    { "id": "AUD-BERKELEY", "voice": "Document Reader: Berkeley", "status": "AUDITION", "paceWpm": 120, "pauseAfterMs": 0, "text": "The record gives us a place to begin, not a reason to stop asking." },
-    { "id": "AUD-KOFF", "voice": "Document Reader: Koff", "status": "AUDITION", "paceWpm": 135, "pauseAfterMs": 0, "text": "The record gives us a place to begin, not a reason to stop asking." },
-    { "id": "AUD-WORKSHOP-A", "voice": "Workshop Voice A", "status": "AUDITION", "paceWpm": 125, "pauseAfterMs": 0, "text": "The record gives us a place to begin, not a reason to stop asking." },
-    { "id": "AUD-WORKSHOP-B", "voice": "Workshop Voice B", "status": "AUDITION", "paceWpm": 140, "pauseAfterMs": 0, "text": "The record gives us a place to begin, not a reason to stop asking." }
+    { "id": "AUD-HOST", "voice": "Host", "status": "AUDITION", "paceWpm": 142, "pauseAfterMs": 0, "text": "The record gives us a place to begin, not a reason to stop asking." },
+    { "id": "AUD-ARCHIVIST", "voice": "Archivist", "status": "AUDITION", "paceWpm": 120, "pauseAfterMs": 0, "text": "The record gives us a place to begin, not a reason to stop asking." },
+    { "id": "AUD-BERKELEY", "voice": "Document Reader: Berkeley", "status": "AUDITION", "paceWpm": 108, "pauseAfterMs": 0, "text": "The record gives us a place to begin, not a reason to stop asking." },
+    { "id": "AUD-KOFF", "voice": "Document Reader: Koff", "status": "AUDITION", "paceWpm": 140, "pauseAfterMs": 0, "text": "The record gives us a place to begin, not a reason to stop asking." },
+    { "id": "AUD-WORKSHOP-A", "voice": "Workshop Voice A", "status": "AUDITION", "paceWpm": 116, "pauseAfterMs": 0, "text": "The record gives us a place to begin, not a reason to stop asking." },
+    { "id": "AUD-WORKSHOP-B", "voice": "Workshop Voice B", "status": "AUDITION", "paceWpm": 147, "pauseAfterMs": 0, "text": "The record gives us a place to begin, not a reason to stop asking." }
   ]
 }

@@ -1,0 +1,30 @@
+{
+  "schema": "cadencer-release-1",
+  "renderedAtUtc": "2026-10-31T12:17:42.9790063+00:00",
+  "sourceManifest": "host-modern-spirit-reading-plan.json",
+  "sourceManifestSha256": "920b7269b053cfa362a9f30a7458ccc5be4fef246cec026719b59f6848551c14",
+  "scriptRevision": "host-modern-spirit-reading-2",
+  "engineVersion": "0.2.0.0",
+  "masterFormat": "PCM WAV, mono, 24-bit; no inserted pauses or mix processing",
+  "segments": [
+    {
+      "id": "HOST-MODERN-SPIRIT-READING",
+      "voice": "Host",
+      "engineVoice": "Leena",
+      "masterPath": "masters/HOST-MODERN-SPIRIT-READING.wav",
+      "engineSampleRate": 24000,
+      "sampleRate": 48000,
+      "samples": 1773660,
+      "durationMs": 36951,
+      "paceWpm": 142,
+      "nominalWpm": 145,
+      "relativeRate": 0.9793103448275862,
+      "relativePitch": 0.98,
+      "relativeVolume": 0.98,
+      "plannedPauseAfterMs": 0,
+      "textSha256": "5aaf4e5eefbbaf1d2119f0e56951761a6e05d4a1ba6bc2a74dae6645cd6e1bcb",
+      "spokenTextSha256": "5aaf4e5eefbbaf1d2119f0e56951761a6e05d4a1ba6bc2a74dae6645cd6e1bcb",
+      "masterSha256": "961a81f3f4ed8091c4ffd57c2d36d3f1498670b0375d7f9dd5c8ac3c53d8edb8"
+    }
+  ]
+}

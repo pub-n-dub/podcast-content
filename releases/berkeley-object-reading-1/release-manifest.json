@@ -1,0 +1,30 @@
+{
+  "schema": "cadencer-release-1",
+  "renderedAtUtc": "2026-10-31T12:06:17.1853891+00:00",
+  "sourceManifest": "berkeley-object-reading-plan.json",
+  "sourceManifestSha256": "cc29ac5e7db372e5e7ee64376cf99c42513c6a4953dba4a752847b38719cbf8b",
+  "scriptRevision": "berkeley-object-reading-2",
+  "engineVersion": "0.2.0.0",
+  "masterFormat": "PCM WAV, mono, 24-bit; no inserted pauses or mix processing",
+  "segments": [
+    {
+      "id": "BERKELEY-OBJECT-READING",
+      "voice": "Document Reader: Berkeley",
+      "engineVoice": "Bdl",
+      "masterPath": "masters/BERKELEY-OBJECT-READING.wav",
+      "engineSampleRate": 24000,
+      "sampleRate": 48000,
+      "samples": 139118,
+      "durationMs": 2898,
+      "paceWpm": 108,
+      "nominalWpm": 120,
+      "relativeRate": 0.9,
+      "relativePitch": 0.94,
+      "relativeVolume": 0.96,
+      "plannedPauseAfterMs": 0,
+      "textSha256": "3cea9eaade3c76155426c64409a0eab4add1d922568a71432edb3aa9dfd994ed",
+      "spokenTextSha256": "3cea9eaade3c76155426c64409a0eab4add1d922568a71432edb3aa9dfd994ed",
+      "masterSha256": "c13282420915e9bd08f9e7e3a3677702d58ef8e15dba2a41bd291dd87ed39aa7"
+    }
+  ]
+}

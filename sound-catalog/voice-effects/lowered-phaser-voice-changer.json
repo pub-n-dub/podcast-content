@@ -1,0 +1,12 @@
+{
+  "name": "Lowered Phaser Voice Changer",
+  "version": 1,
+  "description": "A modest pitch drop with light phasing, preserving the original tempo.",
+  "ffmpegAudioFilter": "rubberband=pitch=0.890899:tempo=1,aphaser=in_gain=0.6:out_gain=0.8:delay=2:decay=0.4:speed=0.4:type=t,alimiter=limit=0.95",
+  "output": {
+    "sampleRateHz": 48000,
+    "channels": 1,
+    "codec": "pcm_s24le"
+  },
+  "example": "ffmpeg -i input.wav -af \"rubberband=pitch=0.890899:tempo=1,aphaser=in_gain=0.6:out_gain=0.8:delay=2:decay=0.4:speed=0.4:type=t,alimiter=limit=0.95\" -ar 48000 -ac 1 -c:a pcm_s24le output.wav"
+}

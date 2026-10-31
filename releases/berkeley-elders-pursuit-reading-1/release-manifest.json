@@ -1,0 +1,30 @@
+{
+  "schema": "cadencer-release-1",
+  "renderedAtUtc": "2026-10-31T14:50:24.7739427+00:00",
+  "sourceManifest": "berkeley-elders-pursuit-reading-plan.json",
+  "sourceManifestSha256": "598ffc857b61532fff5c971d9c902cfacd2af6985f762b12496832d258938731",
+  "scriptRevision": "berkeley-elders-pursuit-reading-1",
+  "engineVersion": "0.2.0.0",
+  "masterFormat": "PCM WAV, mono, 24-bit; no inserted pauses or mix processing",
+  "segments": [
+    {
+      "id": "BERKELEY-ELDERS-PURSUIT-READING",
+      "voice": "Document Reader: Berkeley",
+      "engineVoice": "Bdl",
+      "masterPath": "masters/BERKELEY-ELDERS-PURSUIT-READING.wav",
+      "engineSampleRate": 24000,
+      "sampleRate": 48000,
+      "samples": 299250,
+      "durationMs": 6234,
+      "paceWpm": 108,
+      "nominalWpm": 120,
+      "relativeRate": 0.9,
+      "relativePitch": 0.94,
+      "relativeVolume": 0.96,
+      "plannedPauseAfterMs": 0,
+      "textSha256": "71b0fea1bf5f4f2ac095a2bb0e65f627cc0b7b755eacecdad093a505d63653c5",
+      "spokenTextSha256": "71b0fea1bf5f4f2ac095a2bb0e65f627cc0b7b755eacecdad093a505d63653c5",
+      "masterSha256": "2d9bf403f1ea7badebac87a54aa1672c1797372d04a088d4802b9154e708f957"
+    }
+  ]
+}

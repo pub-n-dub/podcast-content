@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "scriptRevision": "berkeley-object-reading-2",
+  "pronunciations": {
+    "Tati": "Tah-tee",
+    "Berkeley": "Berk-lee",
+    "Squee": "Squee"
+  },
+  "requiredVoices": ["Document Reader: Berkeley"],
+  "voices": {
+    "Document Reader: Berkeley": {
+      "registryId": "AV-DOC-BERKELEY",
+      "profile": "document-reader-berkeley-1.1",
+      "engineVoice": "Bdl",
+      "nominalWpm": 120,
+      "relativePitch": 0.94,
+      "relativeVolume": 0.96
+    }
+  },
+  "segments": [
+    {
+      "id": "BERKELEY-OBJECT-READING",
+      "voice": "Document Reader: Berkeley",
+      "status": "MASTER",
+      "paceWpm": 108,
+      "pauseAfterMs": 0,
+      "text": "So let us begin with the object itself."
+    }
+  ]
+}

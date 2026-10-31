@@ -1,0 +1,30 @@
+{
+  "schema": "cadencer-release-1",
+  "renderedAtUtc": "2026-10-31T12:18:36.6862985+00:00",
+  "sourceManifest": "berkeley-modern-spirit-reading-plan.json",
+  "sourceManifestSha256": "47d4756582fcbfe4f6394e656d732cdfdf03d59a88d17c29f7aa5be3fcafb088",
+  "scriptRevision": "berkeley-modern-spirit-reading-2",
+  "engineVersion": "0.2.0.0",
+  "masterFormat": "PCM WAV, mono, 24-bit; no inserted pauses or mix processing",
+  "segments": [
+    {
+      "id": "BERKELEY-MODERN-SPIRIT-READING",
+      "voice": "Document Reader: Berkeley",
+      "engineVoice": "Bdl",
+      "masterPath": "masters/BERKELEY-MODERN-SPIRIT-READING.wav",
+      "engineSampleRate": 24000,
+      "sampleRate": 48000,
+      "samples": 2002736,
+      "durationMs": 41724,
+      "paceWpm": 106,
+      "nominalWpm": 120,
+      "relativeRate": 0.8833333333333333,
+      "relativePitch": 0.94,
+      "relativeVolume": 0.96,
+      "plannedPauseAfterMs": 0,
+      "textSha256": "5aaf4e5eefbbaf1d2119f0e56951761a6e05d4a1ba6bc2a74dae6645cd6e1bcb",
+      "spokenTextSha256": "5aaf4e5eefbbaf1d2119f0e56951761a6e05d4a1ba6bc2a74dae6645cd6e1bcb",
+      "masterSha256": "4819d353d493c0a802860d904ca5afe4fad33e41536712af62aedd960df9213b"
+    }
+  ]
+}

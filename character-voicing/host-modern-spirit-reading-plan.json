@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "scriptRevision": "host-modern-spirit-reading-2",
+  "pronunciations": {},
+  "requiredVoices": ["Host"],
+  "voices": {
+    "Host": {
+      "registryId": "AV-HOST-INVESTIGATOR",
+      "profile": "host-1.1",
+      "engineVoice": "Leena",
+      "nominalWpm": 145,
+      "relativePitch": 0.98,
+      "relativeVolume": 0.98
+    }
+  },
+  "segments": [
+    {
+      "id": "HOST-MODERN-SPIRIT-READING",
+      "voice": "Host",
+      "status": "MASTER",
+      "paceWpm": 142,
+      "pauseAfterMs": 0,
+      "text": "On the one hand, the state-of-the-art designed machine incarnates all the principles of the dominant International Style, and on the other, a hand-crafted production represents all that the Modern spirit stood against. The robot consists of the perfect act of rupture against historical continuity; it is an invention designed by the sole figure of a pedigreed engineer that embraces innovation and who does not respect boundaries. On the contrary, the factory of the status-quo has nothing to do even with the act of design itself; it is an accumulation of different edifices that count back several generations of engineers with no academic training."
+    }
+  ]
+}

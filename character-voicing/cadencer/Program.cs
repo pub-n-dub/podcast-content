@@ -98,6 +98,10 @@ static void ValidatePlan(SegmentPlan plan)
         var relativeRate = segment.PaceWpm / (double)voice.NominalWpm;
         if (voice.NominalWpm is <= 0 or > 300 || relativeRate is < 0.5 or > 2.0)
             throw new InvalidDataException($"Segment '{segment.Id}' resolves to an invalid relative speech rate.");
+        var pitch = segment.RelativePitch ?? voice.RelativePitch;
+        var volume = segment.RelativeVolume ?? voice.RelativeVolume;
+        if (pitch is < 0.5 or > 2.0 || volume is < 0.5 or > 2.0)
+            throw new InvalidDataException($"Segment '{segment.Id}' has invalid pitch or volume controls.");
         if (segment.PauseAfterMs is < 0 or > 60_000) throw new InvalidDataException($"Invalid pauseAfterMs for '{segment.Id}'.");
     }
 }
@@ -113,7 +117,10 @@ static void RenderPlan(SegmentPlan plan, string outputDirectory)
     {
         var voice = plan.Voices[segment.Voice];
         var relativeRate = segment.PaceWpm / (double)voice.NominalWpm;
-        var audio = engine.SynthesizeToPcm16(PrepareForNarration(segment.Text), voice.EngineVoice, new SynthesisOptions(RelativeRate: relativeRate));
+        var relativePitch = segment.RelativePitch ?? voice.RelativePitch;
+        var relativeVolume = segment.RelativeVolume ?? voice.RelativeVolume;
+        var spokenText = PrepareForNarration(ApplyPronunciations(segment.Text, plan.Pronunciations));
+        var audio = engine.SynthesizeToPcm16(spokenText, voice.EngineVoice, new SynthesisOptions(relativeRate, relativePitch, relativeVolume));
         ValidateAudio(segment.Id, audio);
         var master = ResampleForMaster(audio);
         var relativePath = $"masters/{segment.Id}.wav";
@@ -121,8 +128,8 @@ static void RenderPlan(SegmentPlan plan, string outputDirectory)
         WritePcm24Wave(masterPath, master.SampleRate, master.Samples);
         rendered.Add(new(segment.Id, segment.Voice, voice.EngineVoice, relativePath,
             audio.SampleRate, master.SampleRate, master.Samples.Length, Math.Round(master.Samples.Length * 1000d / master.SampleRate),
-            segment.PaceWpm, voice.NominalWpm, relativeRate,
-            segment.PauseAfterMs, Sha256(segment.Text), Sha256File(masterPath)));
+            segment.PaceWpm, voice.NominalWpm, relativeRate, relativePitch, relativeVolume,
+            segment.PauseAfterMs, Sha256(segment.Text), Sha256(spokenText), Sha256File(masterPath)));
         Console.WriteLine($"Rendered {segment.Id} -> {relativePath}");
     }
     var release = new ReleaseManifest("cadencer-release-1", DateTimeOffset.UtcNow, Path.GetFileName(plan.SourcePath),
@@ -216,6 +223,12 @@ static void PreloadAeonVoiceNativeLibraries()
 }
 
 static string PrepareForNarration(string text) => Regex.Replace(text, @"\bSupertoy\b", "Super toy", RegexOptions.IgnoreCase);
+static string ApplyPronunciations(string text, IReadOnlyDictionary<string, string> pronunciations)
+{
+    foreach (var (written, spoken) in pronunciations.OrderByDescending(pair => pair.Key.Length))
+        text = Regex.Replace(text, $@"\b{Regex.Escape(written)}\b", spoken, RegexOptions.IgnoreCase);
+    return text;
+}
 static string Sha256(string value) => Convert.ToHexString(SHA256.HashData(Encoding.UTF8.GetBytes(value))).ToLowerInvariant();
 static string Sha256File(string path) => Convert.ToHexString(SHA256.HashData(File.ReadAllBytes(path))).ToLowerInvariant();
 
@@ -229,9 +242,9 @@ static void PrintUsage()
 static JsonSerializerOptions CreateJsonOptions() => new() { PropertyNamingPolicy = JsonNamingPolicy.CamelCase, PropertyNameCaseInsensitive = true, WriteIndented = true, DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull };
 
 sealed class CommandOptions { public string? SegmentsPath { get; set; } public string? OutputDirectory { get; set; } public bool ValidateOnly { get; set; } public string? InputPath { get; set; } public string? OutputPath { get; set; } public string LegacyVoice { get; set; } = "Leena"; public string LegacyCadence { get; set; } = "adaptive"; public bool ShowHelp { get; set; } }
-sealed class SegmentPlan { public int SchemaVersion { get; set; } public string ScriptRevision { get; set; } = ""; public List<string> RequiredVoices { get; set; } = []; public Dictionary<string, VoicePlan> Voices { get; set; } = new(StringComparer.Ordinal); public List<SegmentSpec> Segments { get; set; } = []; [JsonIgnore] public string SourcePath { get; set; } = ""; }
-sealed class VoicePlan { public string EngineVoice { get; set; } = ""; public int NominalWpm { get; set; } public string? RegistryId { get; set; } public string? Profile { get; set; } }
-sealed class SegmentSpec { public string Id { get; set; } = ""; public string Text { get; set; } = ""; public string Voice { get; set; } = ""; public string? Status { get; set; } public int PaceWpm { get; set; } public int PauseAfterMs { get; set; } }
+sealed class SegmentPlan { public int SchemaVersion { get; set; } public string ScriptRevision { get; set; } = ""; public List<string> RequiredVoices { get; set; } = []; public Dictionary<string, string> Pronunciations { get; set; } = new(StringComparer.OrdinalIgnoreCase); public Dictionary<string, VoicePlan> Voices { get; set; } = new(StringComparer.Ordinal); public List<SegmentSpec> Segments { get; set; } = []; [JsonIgnore] public string SourcePath { get; set; } = ""; }
+sealed class VoicePlan { public string EngineVoice { get; set; } = ""; public int NominalWpm { get; set; } public double RelativePitch { get; set; } = 1; public double RelativeVolume { get; set; } = 1; public string? RegistryId { get; set; } public string? Profile { get; set; } }
+sealed class SegmentSpec { public string Id { get; set; } = ""; public string Text { get; set; } = ""; public string Voice { get; set; } = ""; public string? Status { get; set; } public int PaceWpm { get; set; } public double? RelativePitch { get; set; } public double? RelativeVolume { get; set; } public int PauseAfterMs { get; set; } }
 sealed record MasterAudio(int SampleRate, short[] Samples);
-sealed record RenderedSegment(string Id, string Voice, string EngineVoice, string MasterPath, int EngineSampleRate, int SampleRate, int Samples, double DurationMs, int PaceWpm, int NominalWpm, double RelativeRate, int PlannedPauseAfterMs, string TextSha256, string MasterSha256);
+sealed record RenderedSegment(string Id, string Voice, string EngineVoice, string MasterPath, int EngineSampleRate, int SampleRate, int Samples, double DurationMs, int PaceWpm, int NominalWpm, double RelativeRate, double RelativePitch, double RelativeVolume, int PlannedPauseAfterMs, string TextSha256, string SpokenTextSha256, string MasterSha256);
 sealed record ReleaseManifest(string Schema, DateTimeOffset RenderedAtUtc, string SourceManifest, string SourceManifestSha256, string ScriptRevision, string EngineVersion, string MasterFormat, List<RenderedSegment> Segments);
